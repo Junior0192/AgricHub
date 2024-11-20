@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messaging App with E-commerce</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="menu-tabs">
+                <button onclick="toggleMenu('app-settings')">☰ App Settings</button>
+                <button onclick="toggleMenu('e-commerce')">☰ E-Commerce</button>
+            </div>
+            <div class="friend-tabs">
+                <button onclick="toggleMenu('friend-list')">Friends</button>
+                <button onclick="toggleMenu('friend-requests')">Requests</button>
+            </div>
+        </header>
+
+        <!-- Main Messaging Section -->
+        <main>
+            <section class="messaging">
+                <h2>Messages</h2>
+                <div class="messages">
+                    <p><strong>John:</strong> Can you check out this video?</p>
+                    <video controls width="50%" src="sample-video.mp4"></video>
+                </div>
+                <div class="message-input">
+                    <textarea id="message-input" placeholder="Type a message..."></textarea>
+                    <input type="file" id="media-upload" accept="image/*,video/*" />
+                    <button onclick="sendMessage()">Send</button>
+                </div>
+            </section>
+        </main>
+
+        <!-- App Settings -->
+        <div class="menu" id="app-settings" style="display: none;">
+            <h3>App Settings</h3>
+            <div class="menu-section">
+                <label>Background Color:</label>
+                <select id="background-color" onchange="changeBackgroundColor()">
+                    <option value="white">White</option>
+                    <option value="green">Green</option>
+                    <option value="blue">Blue</option>
+                </select>
+            </div>
+            <div class="menu-section">
+                <label>Font:</label>
+                <select id="font" onchange="changeFont()">
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Georgia">Georgia</option>
+                </select>
+            </div>
+            <div class="menu-section">
+                <label>Privacy:</label>
+                <input type="checkbox" id="privacy-toggle" /> Enable Privacy Mode
+            </div>
+            <div class="menu-section">
+                <label>Locking Options:</label>
+                <input type="password" placeholder="Set Lock Password" id="lock-password" />
+            </div>
+        </div>
+
+        <!-- E-commerce -->
+        <div class="menu" id="e-commerce" style="display: none;">
+            <h3>E-Commerce</h3>
+            <div class="menu-section">
+                <button onclick="toggleSubMenu('add-bank')">Add Bank Details</button>
+                <div id="add-bank" class="submenu" style="display: none;">
+                    <input type="text" placeholder="Bank Name" />
+                    <input type="number" placeholder="Account Number" />
+                    <button>Save</button>
+                </div>
+            </div>
+            <div class="menu-section">
+                <button onclick="toggleSubMenu('send-money')">Send Money</button>
+                <div id="send-money" class="submenu" style="display: none;">
+                    <input type="number" placeholder="Account No" />
+                    <input type="number" placeholder="Amount" />
+                    <button>Send</button>
+                </div>
+            </div>
+            <div class="menu-section">
+                <button onclick="toggleSubMenu('transaction-history')">Transaction History</button>
+                <div id="transaction-history" class="submenu" style="display: none;">
+                    <ul>
+                        <li>Sent $100 to John</li>
+                        <li>Received $200 from Jane</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Friend List -->
+        <div class="menu" id="friend-list" style="display: none;">
+            <h3>Friend List</h3>
+            <ul>
+                <li>Michael</li>
+                <li>Sarah</li>
+            </ul>
+        </div>
+
+        <!-- Friend Requests -->
+            <section id="friend-requests" class="hidden-tab">
+                <h3>Friend Requests</h3>
+                <ul id="friend-requests-list">
+                    <li>John 
+                        <button onclick="acceptRequest('John')">Accept</button>
+                        <button onclick="declineRequest('John')">Decline</button>
+                    </li>
+                    <li>Jane 
+                        <button onclick="acceptRequest('Jane')">Accept</button>
+                        <button onclick="declineRequest('Jane')">Decline</button>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

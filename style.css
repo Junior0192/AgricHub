@@ -1,0 +1,99 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 10px;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+header .menu-tabs,
+header .friend-tabs {
+    display: flex;
+}
+
+header button {
+    background: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+header button:hover {
+    background: #0056b3;
+}
+
+/* Messaging Section */
+.messaging {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.messages {
+    max-height: 300px;
+    overflow-y: auto;
+    margin-bottom: 10px;
+}
+
+.message-input {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Menu Sections */
+.menu {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.menu-section {
+    margin-bottom: 10px;
+}
+
+/* Submenu */
+.submenu {
+    padding: 5px 10px;
+    background-color: #f9f9f9;
+    margin-top: 5px;
+    border-left: 3px solid #007BFF;
+}
